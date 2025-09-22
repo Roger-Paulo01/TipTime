@@ -12,7 +12,17 @@
         }
         private void ArredondaCimaBtn_Clicked(object sender, EventArgs e)
         {
+            if (double.TryParse(ValorTotalEntry.Text, out double valortotal))
+            {
+                double porcentegem = PorcentagemSlider.Value;
+                double gorjeta = valortotal * (porcentegem / 100);
+                double valorfinal = valortotal + gorjeta;
 
+                double valorFinalArredondado = Math.Ceiling(valorfinal);
+
+                ValorGorjetaLabel.Text = gorjeta.ToString("c");
+                ValorFinalLabel.Text = valorFinalArredondado.ToString("c");
+            }
         }
 
         private void Button_Clicked(object sender, EventArgs e)
@@ -42,7 +52,7 @@
                 //convert é uma classe
                 double gorjeta = valortotal * (porcentegem / 100);
                 double valorfinal = valortotal + gorjeta;
-                //estamos interpolando uma variável que tem conteudo numero em umastring
+                //estamos interpolando uma variável que tem conteudo numero em uma string
                 //ValorGorjetaLabel.Text = $"R$ {gorjeta}";
                 //Orecurso de cima não é muito bom
                 //O recurso de baixo é melhor porque o caracter c entre aspas determina a
@@ -65,7 +75,17 @@
 
         private void ArredondaBaixoBtn_Clicked(object sender, EventArgs e)
         {
+            if (double.TryParse(ValorTotalEntry.Text, out double valortotal))
+            {
+                double porcentegem = PorcentagemSlider.Value;
+                double gorjeta = valortotal * (porcentegem / 100);
+                double valorfinal = valortotal + gorjeta;
 
+                double valorFinalArredondado = Math.Floor(valorfinal);
+
+                ValorGorjetaLabel.Text = gorjeta.ToString("c");
+                ValorFinalLabel.Text = valorFinalArredondado.ToString("c");
+            }
         }
     }
 
