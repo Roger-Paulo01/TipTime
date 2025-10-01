@@ -85,8 +85,9 @@
 
                 ValorGorjetaLabel.Text = gorjeta.ToString("c");
                 ValorFinalLabel.Text = valorFinalArredondado.ToString("c");
+
             }
         }
-    }
+    }// fim da classe
 
 }
